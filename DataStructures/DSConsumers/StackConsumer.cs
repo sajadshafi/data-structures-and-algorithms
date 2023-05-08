@@ -1,5 +1,6 @@
 ﻿
 
+using DataStructures.Helpers;
 using DataStructures.Logic.IServices;
 using DataStructures.Logic.Services;
 
@@ -12,7 +13,7 @@ namespace DataStructures.DSConsumers {
 
         public void ExecuteStack() {
             Console.WriteLine();
-            Console.WriteLine("---------------------- Stack Data Structure ----------------------");
+            Display.Info("---------------------- Stack Data Structure ----------------------\n");
             _customStack.MAX_SIZE = 5;
             int[] stack = _customStack.CreateStack();
             while (true) {
@@ -20,21 +21,21 @@ namespace DataStructures.DSConsumers {
                 int menuChoice = Convert.ToInt32(Console.ReadLine());
                 switch (menuChoice) {
                     case 1:
-                        Console.Write("Enter element to push: ");
+                        Display.Info("Enter element to push: ");
                         int value = Convert.ToInt32(Console.ReadLine());
                         bool result = _customStack.Push(ref stack, value);
                         if (result) {
-                            Console.WriteLine("-> Element Pushed Successfully.");
+                            Display.Success("-> Element Pushed Successfully.\n");
                             Console.WriteLine();
                         } else {
-                            Console.WriteLine("-> Failed to Push!.");
+                            Display.Error("-> Failed to Push!.\n");
                             Console.WriteLine();   
                         }
                         break;
                     case 2:
                         int element = _customStack.Pop(ref stack);
-                        if (element == -1) Console.WriteLine("Failed to Pop!.");
-                        else Console.WriteLine("-> Popped Successfully!. -> {0}", element);
+                        if (element == -1) Display.Error("Failed to Pop!.\n");
+                        else Display.Success(string.Format("-> Popped Successfully!. -> {0}\n", element));
                         Console.WriteLine();   
                         break;
                     case 3:
@@ -43,7 +44,7 @@ namespace DataStructures.DSConsumers {
                     case 0:
                         return;
                     default:
-                        Console.WriteLine("! => Invalid Choice Try Again!..");
+                        Display.Error("! => Invalid Choice Try Again!..\n");
                         Console.WriteLine();    
                         break;
                 }
