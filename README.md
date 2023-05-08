@@ -36,3 +36,28 @@ An array is a basic data structure that stores a collection of elements, all of 
    - Insertion Sort
    - Merge Sort
    - Quick Sort
+
+
+### Linked List
+
+//Properties
+Node head;
+Node tail
+int _size;
+int Count => _size;
+
+#### 1 - Append(Node node)
+#### 2 - Prepend(Node node)
+#### 3 - Insert(int index, Node node)
+#### 4 - RemoveFirst()
+#### 5 - RemoveLast()
+#### 6 - Remove(Node node)
+#### 7 - RemoveAt(int index)
+#### 7 - Find(int index)
+#### 7 - Any(int index)
+#### 9 - RemoveAt(int index)
+#### 10 - TraverseList()
+
+//TODO:
+#### 8 - Get(int index)
+#### 8 - Set(int index, Node node)

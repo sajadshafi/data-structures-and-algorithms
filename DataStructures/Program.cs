@@ -1,5 +1,4 @@
 ﻿using DataStructures.Config;
-using DataStructures.DSConsumers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

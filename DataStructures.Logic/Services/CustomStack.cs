@@ -1,15 +1,17 @@
-﻿using DataStructures.Logic.IServices;
+﻿using DataStructures.Helpers;
+using DataStructures.Logic.IServices;
 namespace DataStructures.Logic.Services {
     public class CustomStack : ICustomStack {
         public int Top { get; set; } = -1;
-        public int MAX_SIZE { get; set; }
+
+        public int MAX_SIZE { get; set; } = 0;
         public int[] CreateStack() {
             return new int[MAX_SIZE];
         }
 
         public bool Push(ref int[] stack, int element) {
             if (IsFull()) {
-                Console.WriteLine("Stack OverFlow!.");
+                Display.Error("Stack OverFlow!.\n");
                 return false;
             } else {
                 Top += 1;
@@ -20,7 +22,7 @@ namespace DataStructures.Logic.Services {
 
         public int Pop(ref int[] stack) {
             if (IsEmpty()) {
-                Console.WriteLine("Stack UnderFlow!.");
+                Display.Error("Stack UnderFlow!.");
                 return -1;
             }
             int element = stack[Top];
@@ -38,22 +40,22 @@ namespace DataStructures.Logic.Services {
 
         public void Traverse(int[] stack) {
             Console.WriteLine();
-            if (IsEmpty()) Console.WriteLine("Stack is Empty!.");
+            if (IsEmpty()) Display.Error("Stack is Empty!.\n");
             else {
-                Console.Write("=> Stack Elements are: ");
+                Display.Success("=> Stack Elements are: ");
                 for (int i = 0; i <= Top; i++) {
-                    Console.Write(stack[i] + "  ");
+                    Display.Success(stack[i] + "  ");
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
         public static void Menu() {
-            Console.WriteLine("1. Push Element To Stack.");
-            Console.WriteLine("2. Pop Element from Stack.");
-            Console.WriteLine("3. Traverse Stack!.");
-            Console.WriteLine("0. Exit.");
-            Console.Write("Please Enter you choice. ");
+            Display.Info("1. Push Element To Stack.\n");
+            Display.Info("2. Pop Element from Stack.\n");
+            Display.Info("3. Traverse Stack!.\n");
+            Display.Info("0. Exit.\n");
+            Display.Info("Please Enter you choice: ");
         }
     }
 }
