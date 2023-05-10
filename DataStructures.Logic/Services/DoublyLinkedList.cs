@@ -54,7 +54,8 @@ namespace DataStructures.Logic.Services {
             if (index == 0) {
                 Prepend(value);
                 return true;
-            } else if (index == Count) {
+            } 
+            if (index == Count) {
                 Append(value);
                 return true;
             }
@@ -92,8 +93,15 @@ namespace DataStructures.Logic.Services {
             if (!IsValidIndex(index) || Count == 0) return default;
 
             DLLNode<T> currentNode = First;
-            for (int i = 0; i < index; i++) {
-                currentNode = currentNode.Next;
+            if (index < Count / 2) {
+                for (int i = 0; i < index; i++) {
+                    currentNode = currentNode.Next;
+                }
+            } else {
+                currentNode = Last;
+                for (int i = Count-1; i > index; i--) {
+                    currentNode = currentNode.Previous;
+                }
             }
             return currentNode;
         }
@@ -147,12 +155,12 @@ namespace DataStructures.Logic.Services {
                 First.Previous = null;
             }
             _size--;
-            temp.Next = temp.Previous = null;
+            temp.Next = null;
             return temp.Value;
         }
 
         public T RemoveLast() {
-            if (First == null) return default;
+            if (Count == 0) return default;
             DLLNode<T> temp = Last;
             if (Count == 1) {
                 First = Last = null;
@@ -160,7 +168,7 @@ namespace DataStructures.Logic.Services {
                 Last = temp.Previous;
                 Last.Next = null;
             }
-            temp.Next = temp.Previous = null;
+            temp.Previous = null;
             _size--;
             return temp.Value;
         }

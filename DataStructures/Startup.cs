@@ -1,6 +1,5 @@
 ﻿using DataStructures.DSConsumers;
 using DataStructures.Helpers;
-using DataStructures.Logic.IServices;
 
 namespace DataStructures {
     public class Startup : IStartup {
