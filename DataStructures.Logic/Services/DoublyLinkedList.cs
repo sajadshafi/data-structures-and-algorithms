@@ -218,6 +218,38 @@ namespace DataStructures.Logic.Services {
             return true;
         }
 
+
+        //Test
+        //public void SwapPairs() {
+        //    if (Count > 1) {
+        //        DLLNode<T> current = First;
+        //        DLLNode<T> after = current.Next;
+        //        First = after;
+        //        for (int i = 0; i < Count - 1; i += 2) {
+
+        //            DLLNode<T> tempP = current.Previous;
+
+        //            current.Next = after.Next;
+        //            current.Previous = after;
+
+        //            after.Next = current;
+        //            after.Previous = tempP;
+
+        //            if (current.Next != null)
+        //                current.Next.Previous = current;
+
+        //            if (after.Previous != null)
+        //                after.Previous.Next = after;
+
+        //            if (current.Next != null) {
+        //                current = current.Next;
+        //                after = current.Next;
+        //            }
+        //        }
+        //    }
+        //}
+
+
         public static void Menu() {
             //Insertion
             Display.Info("1.  Append a new Node.\n");
@@ -239,10 +271,10 @@ namespace DataStructures.Logic.Services {
 
             //updation
             Display.Info("13. Update a node.\n");
-            Display.Info("14. Reverse Traverse Linked List!.\n");
+            Display.Info("14. Reverse Traverse Linked List.\n");
 
             Display.Info("15. Get Node Count!.\n");
-            Display.Info("16. Traverse Linked List!.\n");
+            Display.Info("16. Traverse Linked List.\n");
             Display.Info("0.  Back.\n");
             Display.MainMenu("Please Enter you choice: ");
         }

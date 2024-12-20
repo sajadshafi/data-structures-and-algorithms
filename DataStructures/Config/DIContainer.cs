@@ -17,12 +17,14 @@ namespace DataStructures.Config {
                     services.AddSingleton(typeof(ICustomLinkedList<>), typeof(CustomLinkedList<>));
                     services.AddSingleton(typeof(ICustomLinkedList_v2<>), typeof(CustomLinkedList_v2<>));
                     services.AddScoped(typeof(IDoublyLinkedList<>), typeof(DoublyLinkedList<>));
+                    services.AddScoped(typeof(IBinarySearchTree<>), typeof(BinarySearchTree<>));
                     services.AddTransient<ISortingService, SortingService>();
                     //Consumers
                     services.AddTransient<IStackConsumer, StackConsumer>();
                     services.AddTransient<IArrayConsumer, ArrayConsumer>();
                     services.AddSingleton<ILinkedListConsumer, LinkedListConsumer>();
                     services.AddScoped<IDLLConsumer, DLLConsumer>();
+                    services.AddScoped<IBSTConsumer, BSTConsumer>();
                 }).Build();
         }
     }

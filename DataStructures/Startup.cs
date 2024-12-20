@@ -7,16 +7,20 @@ namespace DataStructures {
         private readonly IArrayConsumer _arrayConsumer;
         private readonly ILinkedListConsumer _listConsumer;
         private readonly IDLLConsumer _dllConsumer;
+        private readonly IBSTConsumer _bstConsumer;
+
         public Startup(
                 IStackConsumer stackConsumer,
                 IArrayConsumer arrayConsumer,
                 ILinkedListConsumer listConsumer,
-                IDLLConsumer dllConsumer
+                IDLLConsumer dllConsumer,
+                IBSTConsumer bstConsumer
             ) {
             _stackConsumer = stackConsumer;
             _arrayConsumer = arrayConsumer;
             _listConsumer = listConsumer;
             _dllConsumer = dllConsumer;
+            _bstConsumer = bstConsumer;
         }
         public void Run() {
             while (true) {
@@ -40,6 +44,9 @@ namespace DataStructures {
                         case 5:
                             _dllConsumer.ExecuteStack();
                             break;
+                        case 6:
+                            _bstConsumer.ExecuteStack();
+                            break;
                         case 0:
                             Environment.Exit(0);
                             break;
@@ -60,6 +67,7 @@ namespace DataStructures {
             Display.MainMenu(string.Format("3. Queue\n"));
             Display.MainMenu(string.Format("4. Linked List\n"));
             Display.MainMenu(string.Format("5. Doubly Linked List\n"));
+            Display.MainMenu(string.Format("6. Binary Search Tree\n"));
             Display.MainMenu(string.Format("0. Exit App\n"));
             Display.MainMenu(string.Format("=>  Select option: "));
         }

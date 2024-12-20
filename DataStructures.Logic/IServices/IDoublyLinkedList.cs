@@ -87,6 +87,8 @@ namespace DataStructures.Logic.IServices {
         /// </summary>
         void TraverseReverse();
 
+        //public void SwapPairs();
+
         /// <summary>
         /// Visit nodes of a linked list
         /// </summary>
